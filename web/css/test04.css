@@ -1,0 +1,60 @@
+.box1{
+    width: 200px;
+    height: 200px;
+    background: skyblue;
+    /* 什么都不写设置的是四个方向的内边距 */
+    /* padding: 20px; */
+    /* 四个方向分开设置 上右下左 */
+    /* padding: 20px 10px 0px 30px; */
+    /* 只传两个值 第一个代表上下 第二个代表左右 */
+    padding: 20px 30px;
+    /* 边框线 样式 实线 双线 线条宽度 颜色*/
+    border: solid 2px red;
+    /* 什么都不写设置的是四个方向的外边距 */
+    /* margin: 50px; */
+    /* 四个方向分开设置 上右下左 */
+    /* margin: 20px 10px 0px 30px; */
+    /* 只传两个值 第一个代表上下 第二个代表左右 */
+    /* margin: 30px 50px ; */
+    /* 设置模盒水平居中，左右的外边距设为auto */
+     /* margin: 50px auto; */
+
+     float: right;
+    /* 隐藏超出范围的内容 */
+     overflow: hidden;
+     
+}
+.box2{
+    width: 200px;
+    height: 200px;
+    background: yellow;
+    padding: 20px;
+    border: double 5px red;
+    /* margin: 50px; */
+    /* 设置元素隐藏不显示在页面 */
+    display: none;
+
+}
+.box3{
+    width: 200px;
+    height: 200px;
+    background: green;
+    padding: 20px;
+    /* border-left: dotted 5px red; */
+    border: dotted 5px red;
+    /* 设置圆角边框 */
+    border-radius: 10px;
+
+
+}
+
+.box4{
+    width: 200px;
+    height: 200px;
+    background:purple;
+    padding: 20px;
+    /* border-left: dotted 5px red; */
+    border-bottom: dotted 5px red;
+    /* margin: 50px; */
+   
+}

@@ -1,0 +1,69 @@
+.box1{
+    width: 500px;
+    height: 200px;
+    background: skyblue;
+    /* 什么都不写设置的是四个方向的内边距 */
+    /* padding: 20px; */
+    /* 四个方向分开设置 上右下左 */
+    /* padding: 20px 10px 0px 30px; */
+    /* 只传两个值 第一个代表上下 第二个代表左右 */
+    padding: 20px 30px;
+    /* 边框线 样式 实线 双线 线条宽度 颜色*/
+    border: solid 2px red;
+    /* 什么都不写设置的是四个方向的外边距 */
+    /* margin: 50px; */
+    /* 四个方向分开设置 上右下左 */
+    /* margin: 20px 10px 0px 30px; */
+    /* 只传两个值 第一个代表上下 第二个代表左右 */
+    /* margin: 30px 50px ; */
+    /* 设置模盒水平居中，左右的外边距设为auto */
+     /* margin: 50px auto; */
+     
+}
+.box2{
+    width: 500px;
+    height: 200px;
+    background: yellow;
+    padding: 20px;
+    border: double 5px red;
+    /* margin: 50px; */
+    /* 相对定位 */
+    position: relative;
+    left:100px;
+    top:100px
+}
+.box3{
+    width: 500px;
+    height: 200px;
+    background: green;
+    padding: 20px;
+    /* border-left: dotted 5px red; */
+    border-bottom: dotted 5px red;
+    /* margin: 50px; */
+    /* 绝对定位 */
+    position: absolute;
+    left: 100px;
+    top: -100px;
+}
+
+.box4{
+    width: 500px;
+    height: 200px;
+    background:purple;
+    padding: 20px;
+    /* border-left: dotted 5px red; */
+    border-bottom: dotted 5px red;
+    margin: 50px;
+    /* 以浏览器窗口作为参考固定位置 浮动在页面中 元素位置不会随浏览器
+    窗口的滚动条滚动而变化 */
+    position:fixed;
+    left: 100px;
+    top:300px
+}
+.box{
+    position: absolute;
+    left: 200px;
+    width: 600px;
+    height: 800px;
+    background:red;
+}

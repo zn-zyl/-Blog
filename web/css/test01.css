@@ -1,0 +1,77 @@
+/* 文字水平居中 */
+.box2{text-align: center;}
+.box3{
+    color: blue;
+    /* font-size: 36px;
+    font-weight: bold;
+    font-family: Microsoft YaHei UI;
+    line-height: 80px; */
+    font: bold 36px/60px Microsoft YaHei UI;
+    /* 字体倾斜 */
+    font-style: italic;
+    /* 设置缩进 */
+    text-indent: 40px;
+}
+/* 给整个页面设置背景 */
+/* body{
+    background-color: blue;
+
+} */
+/* 设置背景颜色 */
+body{
+    /* background: rgb(180,238,180); */
+    /* 调整透明度 */
+    background: rgba(180,238,180,0.8);
+}
+/* 设置背景图片 */
+/* body{
+    height: 4000px;
+    background: url("../img/lemonlogo.png");
+    /* 背景平铺方式 */
+    /* background-repeat: repeat; */
+    /* background-repeat: no-repeat; */
+    /* background-repeat: repeat-y; */
+    /* background-repeat: repeat-x; */
+    /* 背景定位 */
+    /* background-position: top; */
+    /* background-position: center; */
+    /* background-position: left; */
+    /* background-position: 20% 50%; */
+    /* background-position: 200px 300px; */
+    /* 固定背景位置 */
+    /* background-attachment: fixed; */
+    /* 通过像素设置图片大小 */
+    /* background-size: 200px 300px; */
+    /* background-size: auto; */
+    /* 背景填满容器 */
+    /* background-size: cover; */
+
+/* 
+} */ 
+
+/* 标签选择器 */
+span{color: red;}
+/* id选择器 */
+#box2{
+    font: normal 80px/90px;
+    color: seagreen;
+}
+/* 属性选择器 */
+a[name]{
+    color: red;
+}
+/* 层级选择器 不限定直接的父子关系*/
+.box4 p{
+    color: red;
+}
+/* 组选择器 */
+.box1,#box2,.box3{
+    height: 300px;
+    background-color: saddlebrown;
+
+}
+/* 伪类选择器 */
+.box2:hover{
+    background: salmon;
+
+}
