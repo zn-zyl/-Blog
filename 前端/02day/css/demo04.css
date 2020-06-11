@@ -1,0 +1,37 @@
+/*//*类选择器*/
+.login{
+    width: 100%;
+    /*调整颜色透明度*/
+    background: rgba(221, 170, 255, 0.5);
+    height: 80px;
+    text-align: center;
+    /*font-size: 28px;*/
+    font: bold 28px/50px "Microsoft Sans Serif";
+}
+
+input{
+    border: solid #007aff 2px;
+    margin: 20px;
+    padding: 10px;
+}
+.box1{
+    border: solid darkseagreen 2px;
+    margin: 20px;
+    padding: 20px;
+    background: aliceblue;
+    /*隐藏元素*/
+    /*display: none;*/
+}
+
+.box2{
+    border: solid #8496bc 2px;
+    margin: 20px;
+    padding: 20px;
+    background: #ffaaa7;
+    height: 200px;
+    /*盒子内多出的内容隐藏*/
+    overflow: scroll;
+}
+.box2 li{
+    color: cornflowerblue;
+}

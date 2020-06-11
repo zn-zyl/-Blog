@@ -1,0 +1,40 @@
+
+/*类选择器*/
+.login{
+    width: 100%;
+    /*调整颜色透明度*/
+    background: rgba(221, 170, 255, 0.5);
+    height: 80px;
+    text-align: center;
+    /*font-size: 28px;*/
+    font: bold 28px/50px "Microsoft Sans Serif";
+}
+
+/*元素选择器*/
+body{
+    height: 1080px;
+    /*设置背景图片*/
+    background-image: url("./baidulogo.png");
+    /*background-size: cover;*/
+    background-repeat: no-repeat;
+    background-position: top;
+    /*背景图固定*/
+    background-attachment: fixed;
+}
+.div{
+    height: 50px;
+    width: 50px;
+    background: darkseagreen;
+}
+.musen{
+    background: #79ff8e;
+
+}
+/*组选择器*/
+h1,h2{
+    color: yellow;
+}
+/*当鼠标悬停在元素上时给元素添加样式*/
+.index:hover{
+    background: deepskyblue;
+}

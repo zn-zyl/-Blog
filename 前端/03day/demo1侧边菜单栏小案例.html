@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>侧边菜单栏小案例</title>
+    <!--    body上默认margin为8px去掉-->
+    <style type="text/css">
+        ul {
+            /*把无序列表前面的点去掉*/
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        body, html {
+            margin: 0;
+        }
+
+        .title {
+            background: blue;
+            width: 100%;
+            height: 100px;
+            /*字体居中的话就把高设置为和行高一致*/
+            font: bold 28px/100px "Microsoft Sans Serif";
+            color: antiquewhite;
+            text-align: center;
+        }
+
+        .menu_left {
+            width: 280px;
+            height: 600px;
+
+            margin-top: 10px;
+        }
+
+        .menu_title {
+            background: blue;
+            color: white;
+            height: 60px;
+            font: normal 20px/60px "Microsoft Sans Serif";
+            text-indent: 40px;
+        }
+
+        li{
+            height: 50px;
+            background: #ffabc0;
+
+        }
+        h3{
+            margin: 0;
+        }
+        .menu h3{
+            height: 50px;
+            background: #f3f2ff;
+            font: normal 16px/40px "Microsoft Sans Serif";
+            color: #000000;
+            text-indent: 40px;
+        }
+        .menu h3:hover{
+            background: #4afff8;
+        }
+        .menu li{
+            background: #e3f5ff;
+            color: #90dfff;
+            text-indent: 50px;
+            margin-top: 0;
+
+        }
+        .menu li:hover{
+            color: #ff6c5e;
+        }
+
+    </style>
+</head>
+
+<body>
+<div class="title">接口自动化平台</div>
+
+<div class="menu_left">
+    <div class="menu_title">
+        菜单列表
+    </div>
+    <div class="menu_list">
+        <div class="menu">
+            <h3>用例管理</h3>
+            <ul>
+                <li>用例列表</li>
+                <li>添加用例</li>
+            </ul>
+        </div>
+        <div class="menu">
+            <h3>项目管理</h3>
+            <ul>
+                <li>项目列表</li>
+                <li>添加项目</li>
+            </ul>
+        </div>
+        <div class="menu">
+            <h3>接口管理</h3>
+            <ul>
+                <li>接口列表</li>
+                <li>添加接口</li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

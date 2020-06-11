@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>列表和表格</title>
+</head>
+<body>
+<form action="" method="post">
+<!--    disable禁用表单-->
+<!--    placeholder提示-->
+<!--    readonly 只读提示-->
+<!--    required只读字段 不填会有提示-->
+    账号：<input type="text" name="user" disabled><br>
+    密码：<input type="password" name="pwd" placeholder="请输入密码" readonly><br>
+    家庭地址：<input type="text" name="address" placeholder="请输入家庭地址" required><br>
+    选择性别：
+<!--单选框 加一个name属性 表示一组，一组只能选择一个-->
+    <input type="radio" name="gender" value="男">男
+    <input type="radio" name="gender" value="女">女
+    <br>
+<!--    复选框-->
+    选择技能：
+    <input type="checkbox" name="skill" value="python">python
+    <input type="checkbox" name="skill" value="java">java
+    <input type="checkbox" name="skill" value="php">php
+    <input type="checkbox" name="skill" value="c++">c++
+    <br>
+    <input type="button" value="普通的按钮">
+    <br>
+    <input type="reset" value="重置按钮">
+    <br>
+<!--    图片作为标签-->
+    <input type="image">
+    <input type="hidden" name="python" value="999">
+<!--    文本输入框-->
+    <br>个人介绍：
+    <textarea name="desc" id="" cols="30" rows="10"></textarea>
+    <br>
+    <input type="submit">
+
+
+</form>
+
+</body>
+
+</html>
