@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+
+
+</head>
+<body>
+
+<div class="box">
+    <form action="">
+        <input type="button" id="add" value="添加输入框">
+        <input type="button" id="remove" value="删除输入框">
+
+        <div class="input_div">
+            参数名：<input type="text">
+            值：<input type="text">
+        </div>
+    </form>
+</div>
+
+
+<script type="text/javascript">
+    // 点击h3标签触发该函数执行
+    $('#add').click(function () {
+        $('form').append(
+            '<div class="input_div">\n' +
+            '            参数名：<input type="text">\n' +
+            '            值：<input type="text">\n' +
+            '        </div>\n'
+        )
+
+    });
+
+    $('#remove').click(function () {
+        // 判断子元素是否大于3个
+        var count = $('form').children();
+        if (count.length > 3) {
+            count.eq(-1).remove();
+
+        }
+
+    });
+
+
+</script>
+
+
+</body>
+</html>

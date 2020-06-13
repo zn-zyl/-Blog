@@ -1,0 +1,54 @@
+/*类选择器*/
+
+.login {
+    width: 100%;
+    background: rgba(111, 117, 128, 0.8);
+    height: 50px;
+    text-align: center;
+    /*font-size: 28px;*/
+    font: bold 28px/50px "Microsoft YaHei UI";
+    color: #fff;
+}
+
+/*div {*/
+/*    background: #99bfe1;*/
+/*    width: 50px;*/
+/*    height: 50px;*/
+/*}*/
+
+
+.musen {
+    background: #0bb20c;
+    color: red;
+
+}
+
+
+/*元素选择器*/
+/*body {*/
+/*    background: url("../image/bg.jpg");*/
+/*    background-size: cover;*/
+
+/*}*/
+
+body {
+    height: 1080px;
+    background: url("https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-attachment: fixed;
+}
+
+/*组选择器*/
+/*h1,h2,h3,.login,#login{*/
+/*    color: yellow;*/
+
+/*}*/
+
+
+
+
+.index:hover{
+    background: #007aff;
+
+}

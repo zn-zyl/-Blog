@@ -1,0 +1,111 @@
+/*设置左边背景图*/
+.left_div {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 35%;
+    background: url("../image/bj.jpg");
+    background-size: cover;
+}
+
+/*设置右边的模型库大小和位置*/
+.right_div {
+    position: absolute;
+    left: 35%;
+    top: 10%;
+    width: 65%;
+    height: 80%;
+}
+
+/*欢迎信息样式*/
+.welcome {
+    width: 40%;
+    font: normal 32px/50px "Microsoft YaHei";
+    color: #000000;
+    margin: 30px auto 0;
+}
+
+/*欢迎 下面描述信息样式*/
+.info {
+    width: 40%;
+    margin: 0 auto 50px auto;
+    font: normal 20px/30px "Microsoft YaHei";
+}
+/*快乐每一天 左浮动*/
+.left_inof {
+    float: left;
+}
+
+/*免费靓号 样式和右浮动*/
+.info a {
+    float: right;
+    color: #6bb9ff;
+    text-decoration: none;
+}
+
+/*设置form表单的模型框大小和位置*/
+.form_table {
+    width: 40%;
+    margin: 0 auto 50px auto;
+    background: #5e5e5e;
+}
+/*每一行内容模型框的大小*/
+.input_div {
+    float: left;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/*账号密码输入框样式*/
+.user, .pwd {
+    float: left;
+    width: 100%;
+    height: 40px;
+    border: solid 1px rgba(139, 139, 139, 0.55);
+    border-radius: 2px;
+}
+
+/* 手机号前缀（+86）选择框样式*/
+.forge {
+    float: left;
+    width: 30%;
+    height: 44px;
+    border: solid 1px rgba(139, 139, 139, 0.55);
+    border-radius: 2px;
+}
+
+/*手机号输入框样式*/
+.phone {
+    float: right;
+    width: 60%;
+    height: 40px;
+    border: solid 1px rgba(139, 139, 139, 0.55);
+    border-radius: 2px;
+
+}
+/*设置input输入框提示内容的样式*/
+input::-webkit-input-placeholder {
+    color: #ccc;
+    font-size: 16px;
+}
+
+/*手机号下面的提示样式*/
+.form_table span {
+    color: #5e5e5e;
+    font-size: 12px;
+    float: left;
+
+}
+
+/*提交按钮样式*/
+.submit {
+    float: left;
+    width: 100%;
+    height: 40px;
+    border: solid 1px #169aff;
+    border-radius: 5px;
+    background: #169aff;
+    color: #fff;
+    font: normal 18px/40px "Microsoft YaHei";
+}

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <style type="text/css">
+
+        .hide {
+            display: none;
+        }
+        .show{
+            display: block;
+        }
+
+    </style>
+
+
+</head>
+<body>
+<div class="box1" name="123"> box1111</div>
+<div class="box2"> box222</div>
+<div class="box3"> box333</div>
+<a href="http://www.baidu.com">百度</a>
+
+
+<script type="text/javascript">
+    var b1 = $('.box1');
+    var b2 = $('.box2');
+    // jquery设置元素样式
+    b1.css('width', '300px');
+    b1.css("background", 'red');
+    b2.css({
+        background: "cyan",
+        width: "200px"
+
+    });
+
+    // 获取元素属性
+    var b3 = $('a');
+    console.log(b3.href)
+
+
+</script>
+
+
+</body>
+</html>
