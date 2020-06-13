@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax请求</title>
+    <script type="text/javascript" src="../static/js/jquery-1.12.4.min.js"></script>
+
+
+</head>
+<body>
+
+
+<hr>
+<h1>案例2:添加用例，下拉选择</h1>
+
+<form action="">
+    项目：
+    <select name="pro" id="pro">
+        <option value="">请选择</option>
+    </select>
+    接口：
+    <select name="inter" id="interface">
+        <option value="">请选择</option>
+    </select>
+</form>
+
+<hr>
+<h1>案例3:跨域请求的问题</h1>
+<div class="login_box">
+    <div class="login_title">管 理 员 登 录</div>
+
+    <form action="http://www.lemonban.com/user/ajax/login" method="post">
+        <div class="input_text">
+            <input class="input" type="text" name="account" id="username" placeholder="请输入账号:">
+        </div>
+        <div class="input_text">
+            <input class="input" type="password" name="password" id="password" placeholder="请输入密码:">
+        </div>
+        <input type="hidden" name="ipForget" value=true>
+        <div class="input_text">
+            <input id="btn" type="button" class="btn" value="点 击 登 录">
+        </div>
+
+    </form>
+</div>
+
+
+<script type="text/javascript">
+
+    $(function () {
+        // 发送请求获取所在的项目
+        // 发生ajax请求
+        var pro = $('#pro');
+        var inter = $("#interface");
+        $.ajax({
+            url: '/pro_list',
+            method: "get",
+            dataType: "json"
+        }).done(function (data) {
+            // 请求没有出错的情况下，会执行该函数
+            if (data.code === '1') {
+                for (i in data.data) {
+                    item = data.data[i];
+                    var content = '<option value="' + item.id + '">' + item.title + '</option>';
+                    pro.append(content)
+                }
+            }
+        });
+
+        // 当选择某个项目之后，获取该项目的接口
+        pro.change(function () {
+            // 获取当前选中项目的id
+            var pro_id = $(this).val();
+            $.ajax({
+                url: '/interface',
+                data: {
+                    pro_id: pro_id
+                },
+                method: "post",
+                dataType: "json"
+            }).done(function (data) {
+                // 请求没有出错的情况下，会执行该函数
+                if (data.code === '1') {
+                    for (i in data.data) {
+                        item = data.data[i];
+                        var content = '<option value="">' + item.name + '</option>';
+                        inter.append(content)
+                    }
+                }
+            });
+
+
+        })
+
+
+    });
+
+
+    /*
+    ajax 不能直接去请求 非同一个域名下面的接口
+    ajax 跨域请求可以通过指定datatype为jsonp来实现（前提的服务器支持跨域请求）
+    http://www.lemonban.com/user/ajax/login
+    account: 1111111111
+    password: 111111111
+    ipForget: true
+    */
+
+    $("#btn").click(function () {
+        // 获取账号输入框的内容
+        var user = $("#username").val();
+        var pwd = $("#password").val();
+        // 通过ajax发送请求
+        $.ajax({
+            method: "post",
+            url: "http://www.lemonban.com/user/ajax/login",
+            data: {
+                "account": user,
+                "password": pwd,
+                "ipForget": true
+            },
+            dataType: "jsonp"
+        }).done(function (data) {
+            alert(data.message)
+        }).fail(function () {
+            // 请求失败的回调函数
+            alert("请求失败")
+        })
+    })
+
+
+</script>
+
+
+</body>
+</html>
