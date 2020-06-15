@@ -6,6 +6,7 @@
 ==============================
 """
 from gevent import monkey
+
 monkey.patch_all()
 import gevent
 import time
@@ -19,6 +20,7 @@ gevent中默认是遇到gevent.sleep()会进行切换
 线程的切换：耗时io操作  网络磁盘 input output 
 协程切换：遇到io操作
 """
+
 
 #
 # def work1():
@@ -46,6 +48,7 @@ def timeit(func):
     :param func:
     :return:
     """
+
     def wrapper(*args, **kwargs):
         s_time = time.time()
         func(*args, **kwargs)
@@ -58,17 +61,19 @@ def timeit(func):
 def work2():
     for i in range(5):
         gevent.sleep(1)
-        print(f"打枪第{i+1}次")
+        print(f"打枪第{i + 1}次")
 
 
 # 10000个请求 开5000个协程来跑
 urls = ["https:www.baidu.com" for i in range(10000)]
+
 
 def work3():
     while urls:
         url = urls.pop()
         time.sleep(0.5)
         print(f"正在请求url:{url}")
+
 
 # 创建5000个协程
 @timeit
@@ -81,6 +86,5 @@ def main():
     for i in cor_list:
         i.join()
 
+
 main()
-
-

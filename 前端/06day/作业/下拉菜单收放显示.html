@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>侧边菜单栏小案例</title>
-    <script type="text/javascript" src="../../py_15day/js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="./js/jquery-1.12.4.min.js"></script>
     <style type="text/css">
         ul {
             list-style-type: none;
@@ -123,6 +123,8 @@
 
 <script type="text/javascript">
     // 点击h3标签触发该函数执行
+    //slideToggle()通过使用滑动效果，在显示和隐藏状态之间切换 <p> 元素：
+    //stop()
     $('.menu h3').click(function () {
         $(this).next().stop().slideToggle().parent().siblings().children('ul').slideUp();
 

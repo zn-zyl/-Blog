@@ -80,7 +80,8 @@
     // 2、获取输入框的账号和密码，
     // 3、对密码进行md5加密
     // 4、发送请求：post请求(ajax)
-    $('#btn').click(function () {
+
+    $('#btn').click(function (){
         // 获取账号
         var user = $('#username').val();
         // 获取密码
@@ -93,7 +94,7 @@
 
         // 对密码进行md5加密
         var pwdMd5 = $.md5(pwd);
-        // 发生ajax请求
+        // 发生ajax请求 url地址是在当前html页面地址基础上后面的地址
         $.ajax({
             url: '/login',
             data: {user: user, pwd: pwdMd5},
@@ -117,7 +118,6 @@
 
 
 </script>
-
 
 </body>
 </html>

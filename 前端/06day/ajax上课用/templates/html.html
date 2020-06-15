@@ -46,54 +46,103 @@
 
 
 <script type="text/javascript">
-
     $(function () {
         // 发送请求获取所在的项目
-        // 发生ajax请求
         var pro = $('#pro');
-        var inter = $("#interface");
+        var inter = $('#interface');
+
         $.ajax({
             url: '/pro_list',
-            method: "get",
+            method: 'get',
             dataType: "json"
         }).done(function (data) {
-            // 请求没有出错的情况下，会执行该函数
             if (data.code === '1') {
                 for (i in data.data) {
                     item = data.data[i];
                     var content = '<option value="' + item.id + '">' + item.title + '</option>';
                     pro.append(content)
+
                 }
+
             }
         });
 
+
+        // 发生ajax请求
+
         // 当选择某个项目之后，获取该项目的接口
         pro.change(function () {
-            // 获取当前选中项目的id
-            var pro_id = $(this).val();
-            $.ajax({
-                url: '/interface',
-                data: {
-                    pro_id: pro_id
-                },
-                method: "post",
-                dataType: "json"
-            }).done(function (data) {
-                // 请求没有出错的情况下，会执行该函数
-                if (data.code === '1') {
-                    for (i in data.data) {
-                        item = data.data[i];
-                        var content = '<option value="">' + item.name + '</option>';
-                        inter.append(content)
+                var pro_id = pro.val();
+                $.ajax({
+                    url: '/interface',
+                    data: {pro_id: pro_id},
+                    method:"post",
+                    dataType: "json",
+                }).done(function (data) {
+                    if (data.code === '1') {
+                        for (i in data.data) {
+                            item = data.data[i];
+                            var content = '<option value="">' + item.name + '</option>';
+                            inter.append(content)
+                        }
+
+
                     }
-                }
-            });
 
+                });
 
-        })
+            })
 
 
     });
+
+    // $(function () {
+    //     // 发送请求获取所在的项目
+    //     // 发生ajax请求
+    //     var pro = $('#pro');
+    //     var inter = $("#interface");
+    //     $.ajax({
+    //         url: '/pro_list',
+    //         method: "get",
+    //         dataType: "json"
+    //     }).done(function (data) {
+    //         // 请求没有出错的情况下，会执行该函数
+    //         if (data.code === '1') {
+    //             for (i in data.data) {
+    //                 item = data.data[i];
+    //                 var content = '<option value="' + item.id + '">' + item.title + '</option>';
+    //                 pro.append(content)
+    //             }
+    //         }
+    //     });
+    //
+    //     // 当选择某个项目之后，获取该项目的接口
+    //     pro.change(function () {
+    //         // 获取当前选中项目的id
+    //         var pro_id = $(this).val();
+    //         $.ajax({
+    //             url: '/interface',
+    //             data: {
+    //                 pro_id: pro_id
+    //             },
+    //             method: "post",
+    //             dataType: "json"
+    //         }).done(function (data) {
+    //             // 请求没有出错的情况下，会执行该函数
+    //             if (data.code === '1') {
+    //                 for (i in data.data) {
+    //                     item = data.data[i];
+    //                     var content = '<option value="">' + item.name + '</option>';
+    //                     inter.append(content)
+    //                 }
+    //             }
+    //         });
+    //
+    //
+    //     })
+    //
+    //
+    // });
 
 
     /*
