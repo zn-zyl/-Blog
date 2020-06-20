@@ -9,7 +9,7 @@ from django.urls import path
 
 # 导入视图函数
 
-from projects.views import index_page, index_page2
+from projects.views import index_page, index_page2, IndexPage
 
 # 1.urlpatterns为名称固定的列表 用于存放路由信息
 # 2.列表中的元素个数就是路由条数
@@ -22,5 +22,11 @@ from projects.views import index_page, index_page2
 
 urlpatterns = [
     path('index/', index_page),
-    path('index/2/', index_page2)
+    path('index2/', index_page2),
+    # 类视图定义路由
+    # 1.path函数的第二个参数为类视图名.as_view()
+    # 2.可以使用<url类型转化器:路径参数名>
+    # 3.int path UUID slug等等
+    # path('index3/', IndexPage.as_view()),
+    path('index3/<int:pk>/', IndexPage.as_view()),
 ]

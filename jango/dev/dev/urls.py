@@ -30,7 +30,7 @@ from projects.views import index_page, index_page2
 #               e url路由信息推荐使用/结尾
 # 4.可以在子应用中定义子路由，子应用名/urls.py中定义
 # 5.可以使用include函数来加载子路由，第一个参数为字符串 第二个参数为（'子应用名.urls'）
-# 6.所有路由在寻址时都会先从主路由开始找，如果url第一部分匹配成功 那么会将url剩下的部分
+# 6.所有路由在寻址时都会先从主路由开始找，如果url第一部分匹配成功 那么会将url剩下的部分拿到子路由中去匹配
 
 
 urlpatterns = [
