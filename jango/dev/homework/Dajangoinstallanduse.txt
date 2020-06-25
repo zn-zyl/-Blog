@@ -53,3 +53,4 @@ projects/views.py：定义业务逻辑（先前端返回的页面）
 web应用如何调用后端服务（视图函数）：前端访问url ——> 调用指定的函数
 路由表：url与后端视图函数关系的一个一一映射表
 
+help(request) 查看request用法

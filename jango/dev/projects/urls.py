@@ -28,5 +28,6 @@ urlpatterns = [
     # 2.可以使用<url类型转化器:路径参数名>
     # 3.int path UUID slug等等
     # path('index3/', IndexPage.as_view()),
-    path('index3/<int:pk>/', IndexPage.as_view()),
+    # path('index3/<int:pk>/', IndexPage.as_view()),
+    path('index3/', IndexPage.as_view()),
 ]

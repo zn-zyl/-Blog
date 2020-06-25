@@ -15,7 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
@@ -27,7 +26,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -38,7 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # 注册子应用   子应用名.apps.子应用名首字母大写Config
-    'projects.apps.ProjectsConfig'   # 也可以直接写成一个 'projects'
+    'projects.apps.ProjectsConfig'  # 也可以直接写成一个 'projects'
 ]
 
 MIDDLEWARE = [
@@ -55,10 +53,14 @@ ROOT_URLCONF = 'dev.urls'
 
 TEMPLATES = [
     {
+        # a.指定模板引擎 模板引擎相当于一个解析器
+        # b.常用的模板引擎 DjangoTemplate Jinja2
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
-        ,
-        'APP_DIRS': True,
+        # c.指定html页面或者html模板存放的路径 可以添加多个路径
+        # d. 是django搜索html页面或者模板的路径
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        # e.指定子应用下是否有html页面 有的话是True 没有False
+        'APP_DIRS': False,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -72,18 +74,29 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'dev.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
+    # defauit在django中数据库的标识
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # 指定数据库使用的引擎
+        'ENGINE': 'django.db.backends.mysql',
+        # 指定数据库的名称
+        'NAME': 'dev',
+        # 指定连接的数据库主机地址，域名和ip都可以
+        'HOST': 'localhost',
+        # 指定数据库的连接端口号，默认为3306,
+        'PORT': 3306,
+        'USER': 'root',
+        'PASSWORD': '12345678',
     }
+    #     'default': {
+    #         'ENGINE': 'django.db.backends.sqlite3',
+    #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3')
+    # }
+
 }
-
-
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
@@ -102,7 +115,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
@@ -117,7 +129,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/

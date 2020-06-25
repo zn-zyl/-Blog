@@ -1,6 +1,7 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.views import View
 import json
+from django.shortcuts import render
 
 
 def index_page(request):
@@ -34,12 +35,41 @@ class IndexPage(View):
 
     """
 
-    def get(self, request, pk):
+    def get(self, request):
         # 5.url后面的？号参数 成为query string查询字符串参数 ？参数名1=参数值1&参数名2=参数值2
         # 6.request.GET获取查询字符串参数
         # 7.request.GET返回QueryDict对象 类似于一个字典 支持字典中的所有操作
         # 8.request.GET[KEY],request.GET.get(key),request.GET.getlist（）去获取值 request.GET.getlist（）可以获取相同key的多个参数值合成一个list
-        return HttpResponse("<h2>GET hihihihihihih我们的组个是就是激素就i</h2>")
+        # return HttpResponse("<h2>Post hihihihihihihi</h2>")
+
+        # 假设data数据是从数据库从读取的
+        data = [
+            {
+                "project_name": "前程贷项目11",
+                "leader": "可优",
+                "app_name": "P2P平台应用"
+            },
+            {
+                "project_name": "探索火星项目22",
+                "leader": "优优",
+                "app_name": "吊炸天应用"
+            },
+            {
+                "project_name": "无比牛逼的项目33",
+                "leader": "可可",
+                "app_name": "神秘应用"
+            },
+        ]
+        # a. render函数主要用于渲染模板生成一个html页面
+        # b. 第一个参数为request
+        # c. 第二个参数为在templates目录下的文件名
+        # d. local()函数能获取当前命名空间中的所有变量信息 然后存放在一个字典中 给index.html模板使用
+        # return render(request, "index.html")  # 无参数只返回动态页面情况
+        # return render(request, "index.html", locals())
+        # e.JsonResponse是HttpResponse的子类
+        # 第一个参数为字典或者嵌套字典的列表，如果为非字典类型，需要将safe设置为False
+        # 会返回一个json的字符串
+        return JsonResponse(data, safe=False)
 
     def post(self, request, pk):
         # 1. 可以使用request.POST方法获取application/x-www.urlencoded类型的参数
